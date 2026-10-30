@@ -17,7 +17,15 @@ spec:
       labels:
         fleet: ai-fleet-gitops
     spec:
-      applications: []
+      applications:
+        - name: ais
+          appType: compose
+          volumes: []
+          catalogItemRef:
+            item: ais-detector-boat-x86
+            catalog: droneapps
+            channel: prod
+            version: 1.1.1-compose-x86
       os:
         image: 192.168.1.211:5000/jetson-base-rhem_9.8_1.3.0_tailscale:1.2.0
       systemd:
