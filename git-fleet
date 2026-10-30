@@ -1,0 +1,14 @@
+apiVersion: flightctl.io/v1beta1
+kind: Fleet
+spec:
+  selector:
+    matchLabels:
+      drone: ai-gitops
+  template:
+    metadata:
+      labels:
+        fleet: ai-gitops-fleet
+    spec:
+      applications: []
+      os:
+        image: 192.168.1.211:5000/jetson-base-rhem_9.8_1.3.0_tailscale:1.2.0
