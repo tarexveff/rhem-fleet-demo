@@ -1,5 +1,13 @@
 apiVersion: flightctl.io/v1beta1
 kind: Fleet
+metadata:
+  annotations:
+    fleet-controller/templateVersion: v170
+  creationTimestamp: '2026-08-31T17:05:15.036628Z'
+  generation: 170
+  labels: {}
+  name: ai-fleet-gitops
+  resourceVersion: '341'
 spec:
   selector:
     matchLabels:
@@ -7,8 +15,19 @@ spec:
   template:
     metadata:
       labels:
-        fleet: ai-gitops-fleet
+        fleet: ai-fleet-gitops
     spec:
       applications: []
       os:
         image: 192.168.1.211:5000/jetson-base-rhem_9.8_1.3.0_tailscale:1.2.0
+      systemd:
+        matchPatterns:
+          - tailscaled
+status:
+  conditions:
+    - lastTransitionTime: '2026-08-31T17:05:15.058456348Z'
+      message: ''
+      reason: Valid
+      status: 'True'
+      type: Valid
+
