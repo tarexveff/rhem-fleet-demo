@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: '2026-08-31T17:05:15.036628Z'
   generation: 170
   labels: {}
-  name: ai-fleet-gitops-2
+  name: ai-fleet-gitops
   resourceVersion: '341'
 spec:
   selector:
